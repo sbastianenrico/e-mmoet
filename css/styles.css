@@ -1,0 +1,39 @@
+body{
+    font: 14px "Segoe UI";
+}
+
+input{
+    height:40px; width:100%
+}
+
+.sidebar {
+    height: 100%;
+    width: 150px;
+    padding-top: 20px;
+}
+
+.sidebar a, .dropdown-btn{
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar a:hover, .dropdown-btn:hover {
+    color: #005FB1;
+}
+
+.dropdown-container {
+    display: none;
+    padding-left: 8px;
+}
+
+.dropdown-btn:focus{
+    color: #005FB1;
+}
