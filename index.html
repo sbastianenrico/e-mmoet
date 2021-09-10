@@ -10,8 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="Logo.png">
+    <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
-        body{ font: 14px "Segoe UI"; margin-top: 50px; background-image: linear-gradient(white, skyblue); background-repeat: no-repeat; background-size: 100% 170%;}
+        body{ margin-top: 50px; background-image: linear-gradient(white, skyblue); background-repeat: no-repeat; background-size: 100% 170%;}
         input{ height:40px; width:100%}
     </style>
 </head>
@@ -46,19 +47,10 @@
 </body>
 
 <script>
-    // if (typeof(Storage) !== "undefined") {
-    // // Code for localStorage/sessionStorage.
-    // if (sessionStorage.getItem("user") != "") {
-    //     // document.getElementById("login").style.display = "none";
-    //     document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
-    //     // document.getElementById("welcome").style.display = "none";
-    // }
-    // } else {
-    // // Sorry! No Web Storage support..
-    // }
-
-    document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
-    document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+    if (typeof(Storage) !== "undefined") {
+        document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
+        document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+    }
         
     function login() {
     if (typeof(Storage) !== "undefined") {
