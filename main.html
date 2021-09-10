@@ -11,19 +11,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="shortcut icon" href="Logo.png">
+        <link rel="stylesheet" href="css/styles.css">
         <style type="text/css">
-            body{ font: 14px "Segoe UI";}
-            input{ height:40px; width:100%}
-            .sidebar {
+            /* .sidebar {
                 height: 100%;
                 width: 150px;
-                /* position: fixed; */
-                /* z-index: 1; */
-                /* top: 0; */
-                /* left: 0; */
-                /* background-color: #111; */
-                /* overflow-x: hidden; */
-                /* transition: 0.5s; */
                 padding-top: 20px;
             }
 
@@ -45,10 +37,13 @@
             }
 
             .dropdown-container {
-                /* display: none; */
-                /* background-color: #262626; */
+                display: none;
                 padding-left: 8px;
             }
+
+            .dropdown-btn:focus{
+                color: #005FB1;
+            } */
         </style>
     </head>
 <body style="height: 100%;">
@@ -64,7 +59,7 @@
     <div class="container-fluid" style="height: 100%;">
         <div class="row" style="height: 100%;">
             <div class="col-md-2 sidebar" style="margin-left: 20px;">
-                <button class="dropdown-btn" style="color: #005FB1;">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></button>
+                <a class="dropdown-btn" href="#">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-container">
                     <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
                     <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
@@ -99,6 +94,16 @@
         document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
     }
 
+    
+    function logout() {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.clear();
+    }else{
+        // Sorry! No Web Storage support..
+
+    }
+    }
+
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
 
@@ -112,15 +117,6 @@
         dropdownContent.style.display = "block";
         }
         });
-    }
-
-    function logout() {
-    if (typeof(Storage) !== "undefined") {
-        sessionStorage.clear();
-    }else{
-        // Sorry! No Web Storage support..
-
-    }
     }
 </script>
 </html>
