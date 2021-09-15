@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>KlikBCA Bisnis</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="Logo.png">
+        <link rel="stylesheet" href="css/styles.css">
+        <style type="text/css">
+            /* .dropdown-container {
+                display: none;
+                padding-left: 8px;
+            } */
+        </style>
+    </head>
+<body style="height: 100%;">
+    <nav class="navbar navbar-default" style="background-color: #000080;">
+        <a class="navbar-brand" href="#" style="color: gold;">
+            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+        </a>
+    </nav>
+    <nav class="navbar navbar-default" style="background-color: #005FB1;">
+        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+    </nav>
+
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
+                <a class="dropdown-btn" href="welcome.html" style="color: #005FB1;">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-container">
+                    <a href="informasi.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
+                    <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan Suku Bunga</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
+                </div>
+            </div>
+
+            <div class="col-md-1"></div>
+            <div class="col-md-8" style="text-align: center;">
+                <div style="background-color: skyblue; border: 3px solid #005FB1; margin-top: 25%;">
+                    <h2>Selamat Datang dalam layanan<br><b><i>Electronic Money Market Online Transaction!</i></b></h2>
+                </div>
+                <br>
+                <p>(Segera hubungi haloBCA 1500888 apabila mengalami kendala)</p>
+                <!-- test sessionStorage -->
+                <!-- <div class="form-inline">
+                    <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
+                </div>
+                <div class="form-inline">
+                    <p>Password:&nbsp;<p id="loggedInPass"></p></p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    if (typeof(Storage) !== "undefined") {
+        document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
+        document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+    }
+
+    function logout() {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.clear();
+    }else{
+        // Sorry! No Web Storage support..
+    }
+    }
+
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+    }
+</script>
+</html>
