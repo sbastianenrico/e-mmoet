@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>KlikBCA Bisnis</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="Logo.png">
+        <link rel="stylesheet" href="css/styles.css">
+        <style type="text/css">
+            /* .dropdown-container {
+                display: none;
+                padding-left: 8px;
+            } */
+        </style>
+    </head>
+<body style="height: 100%;">
+    <nav class="navbar navbar-default" style="background-color: #000080;">
+        <a class="navbar-brand" href="#" style="color: gold;">
+            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+        </a>
+    </nav>
+    <nav class="navbar navbar-default" style="background-color: #005FB1;">
+        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+    </nav>
+
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
+                <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-container">
+                    <a href="informasi.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
+                    <a href="tarik-pbmm.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan Suku Bunga</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
+                </div>
+            </div>
+
+            <form>
+            <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
+                <h2><i>PBMM Online Transaction - Penarikan PBMM</i></h2>
+                <br>
+                <h4 style="color: red; text-align: center;">TRANSAKSI PENARIKAN PBMM TELAH DIAJUKAN, MOHON MENUNGGU PENAWARAN SUKU BUNGA</h4>
+                <br><br>
+                <table class="table table-borderless" style="font-size: 20px;">
+                    <tr>
+                        <td style="vertical-align: middle; width: 48%;">Tanggal</td>
+                        <td style="vertical-align: middle; width: 2%;">:</td>
+                        <td id="date" style="vertical-align: middle; width: 50%;"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jam</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td id="time" style="vertical-align: middle;"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">No Transaksi</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">eMM01425</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Rekening Tujuan</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">149-670-3285</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Mata Uang</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td id="valas" style="vertical-align: middle;"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jumlah</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td id="jmltarik" style="vertical-align: middle;"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Biaya</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">-</td>
+                    </tr>
+                </table>
+
+                <br><br><br>
+                <div style="text-align: right;">
+                <a href="informasi.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
+                <a href="tarik-pbmm.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
+                </div>
+                <!-- test sessionStorage -->
+                <!-- <div class="form-inline">
+                    <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
+                </div>
+                <div class="form-inline">
+                    <p>Password:&nbsp;<p id="loggedInPass"></p></p>
+                </div> -->
+                <!-- <div class="form-inline">
+                    <p>Tanggal Tarik:&nbsp;<p id="tgltarik"></p></p>
+                </div>
+                <div class="form-inline">
+                    <p>Tanggal Jatuh Tempo:&nbsp;<p id="tgljatem"></p></p>
+                </div> -->
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    if (typeof(Storage) !== "undefined") {
+        document.getElementById("date").innerHTML = sessionStorage.getItem("date");
+        document.getElementById("time").innerHTML = sessionStorage.getItem("time");
+        document.getElementById("valas").innerHTML = sessionStorage.getItem("valas");
+        document.getElementById("jmltarik").innerHTML = sessionStorage.getItem("jmltarik");
+        // document.getElementById("tgltarik").innerHTML = sessionStorage.getItem("tgltarik");
+        // document.getElementById("tgljatem").innerHTML = sessionStorage.getItem("tgljatem");
+        document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
+        document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+    }
+
+
+    function logout() {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.clear();
+    }else{
+        // Sorry! No Web Storage support..
+    }
+    }
+
+    
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+    }
+
+    $('input.number').keyup(function(event) {
+        if(event.which >= 37 && event.which <= 40){
+            event.preventDefault();
+        }
+
+        $(this).val(function(index, value) {
+            value = value.replace(/,/g,'');
+            return numberWithCommas(value);
+        });
+    });
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
+    $('.strip').keyup(function() {
+        var foo = $(this).val().split("-").join(""); // remove hyphens
+        if (foo.length > 0) {
+            foo = foo.match(new RegExp('.{1,3}', 'g')).join("-");
+        }
+        $(this).val(foo);
+    }); 
+</script>
+</html>
