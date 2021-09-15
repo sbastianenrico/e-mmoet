@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>KlikBCA Bisnis</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="Logo.png">
+        <link rel="stylesheet" href="css/styles.css">
+        <style type="text/css">
+            /* .dropdown-container {
+                display: none;
+                padding-left: 8px;
+            } */
+        </style>
+    </head>
+<body style="height: 100%;">
+    <nav class="navbar navbar-default" style="background-color: #000080;">
+        <a class="navbar-brand" href="#" style="color: gold;">
+            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+        </a>
+    </nav>
+    <nav class="navbar navbar-default" style="background-color: #005FB1;">
+        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+    </nav>
+
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
+                <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <div class="dropdown-container">
+                    <a href="informasi.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
+                    <a href="tarik-pbmm.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan Suku Bunga</a>
+                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
+                </div>
+            </div>
+
+            <form>
+            <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
+                <h2><i>PBMM Online Transaction - Penarikan PBMM</i></h2>
+                <br><br>
+                <table class="table" style="font-size: 20px;">
+                    <tr>
+                        <td style="vertical-align: middle; width: 48%;">Jenis Fasilitas</td>
+                        <td style="vertical-align: middle; width: 2%;">:</td>
+                        <td style="vertical-align: middle; width: 50%;">Pinjaman Berjangka <i>Money Market</i></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Mata Uang</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">
+                            <select style="width:418px" class="form-control" id="valas">
+                                <option value="IDR">IDR</option>
+                                <option value="USD">USD</option>
+                                <option value="SGD">SGD</option>
+                                <option value="HKD">HKD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="JPY">JPY</option>
+                                <option value="SAR">SAR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="CHF">CHF</option>
+                                <option value="SEK">SEK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="CAD">CAD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="MYR">MYR</option>
+                                <option value="THB">THB</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Jumlah Penarikan</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;"><input type="text" class="form-control number" id="jmltarik" placeholder="e.g. 1,000,000"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Tanggal Penarikan</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;"><input type="date" class="form-control" id="tgltarik"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Tanggal Jatuh Tempo</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;"><input type="date" class="form-control" id="tgljatem"></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Masukkan 8 Digit berikut pada KeyBCA</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">98 703285</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle; color: red"><b>PASTIKAN 6 DIGIT TERAKHIR SAMA DENGAN REKENING ANDA</b></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Respon KeyBCA Appli 2</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;"><input type="password" class="form-control"></td>
+                    </tr>
+                </table>
+
+                <br><br><br>
+                <div style="text-align: right;">
+                <a href="tarik-pbmm-detail.html" onclick="return tarik()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Lanjut</button></a>
+                </div>
+                <!-- test sessionStorage -->
+                <!-- <div class="form-inline">
+                    <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
+                </div>
+                <div class="form-inline">
+                    <p>Password:&nbsp;<p id="loggedInPass"></p></p>
+                </div> -->
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    if (typeof(Storage) !== "undefined") {
+        document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
+        document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+    }
+
+
+    function logout() {
+    if (typeof(Storage) !== "undefined") {
+        sessionStorage.clear();
+    }else{
+        // Sorry! No Web Storage support..
+    }
+    }
+
+    function tarik() {
+    if (typeof(Storage) !== "undefined") {
+        var now = new Date();
+        var date = now.getDate()+'/'+(now.getMonth()+1)+'/'+now.getFullYear();
+        var time = now.getHours()+'.'+now.getMinutes();
+        var valuta = valas.value;
+        var jumlahtarik = jmltarik.value;
+        var tanggaltarik = tgltarik.value;
+        var tanggaljatem = tgljatem.value;
+
+        sessionStorage.setItem("date", date);
+        sessionStorage.setItem("time", time);
+        sessionStorage.setItem("valas", valuta);
+        sessionStorage.setItem("jmltarik", jumlahtarik);
+        sessionStorage.setItem("tgltarik", tanggaltarik);
+        sessionStorage.setItem("tgljatem", tanggaljatem);
+    }else{
+        // Sorry! No Web Storage support..
+    }
+    }
+
+
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+        } else {
+        dropdownContent.style.display = "block";
+        }
+        });
+    }
+
+    $('input.number').keyup(function(event) {
+        if(event.which >= 37 && event.which <= 40){
+            event.preventDefault();
+        }
+
+        $(this).val(function(index, value) {
+            value = value.replace(/,/g,'');
+            return numberWithCommas(value);
+        });
+    });
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
+    $('.strip').keyup(function() {
+        var foo = $(this).val().split("-").join(""); // remove hyphens
+        if (foo.length > 0) {
+            foo = foo.match(new RegExp('.{1,3}', 'g')).join("-");
+        }
+        $(this).val(foo);
+    }); 
+</script>
+</html>
