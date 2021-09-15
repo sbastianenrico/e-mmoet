@@ -29,11 +29,6 @@ input{
     color: #005FB1;
 }
 
-.dropdown-container {
-    display: none;
-    padding-left: 8px;
-}
-
 .dropdown-btn:focus{
     color: #005FB1;
 }
