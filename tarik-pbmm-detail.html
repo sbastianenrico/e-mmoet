@@ -10,6 +10,23 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "rekeningpemblokiran21@gmail.com",
+                    Password : "testes123456qwerty",
+                    To : 'sbastianenrico@gmail.com',
+                    From : "rekeningpemblokiran21@gmail.com",
+                    Subject : "This is the subject",
+                    Body : "And this is the body"
+                })
+                .then(function(message){
+                    alert("mail sent successfully")
+                });
+                }
+        </script>
         <link rel="shortcut icon" href="Logo.png">
         <link rel="stylesheet" href="css/styles.css">
         <style type="text/css">
@@ -86,10 +103,12 @@
                 </table>
 
                 <br><br><br>
+                <form method="post">
                 <div style="text-align: right;">
-                <a href="informasi.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
+                <a href="informasi.html" onclick="sendEmail()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
                 <a href="tarik-pbmm.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
+                </form>
                 <!-- test sessionStorage -->
                 <!-- <div class="form-inline">
                     <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
