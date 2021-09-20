@@ -79,20 +79,12 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        if(localStorage.getItem("flag") == 1){
-            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
-            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-            document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
-
-            //rincian fasilitas
-            document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
-            var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
-            var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""))
-            document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
-        }
+        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+        document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
     }
     function logout() {
         if (typeof(Storage) !== "undefined") {
