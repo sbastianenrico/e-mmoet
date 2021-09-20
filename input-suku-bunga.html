@@ -89,6 +89,7 @@
                         <td style="vertical-align: middle;"><input type="text" id="bunga"></td>
                     </tr>
                 </table>
+                <button>simpan</button>
             </form>
             </div>
         </div>
@@ -106,14 +107,13 @@
         var h = d.getHours();
         var m = d.getMinutes();
         var time = h + '.' + m;
-
         document.getElementById("waktudeal").innerHTML = time;
 
         var namarm = namarm.value;
         var bunga = bunga.value;
-
         localStorage.setItem("namarm", namarm);
         localStorage.setItem("bunga", bunga);
+        localStorage.setItem("waktudeal", time);
     }
 </script>
 </html>
