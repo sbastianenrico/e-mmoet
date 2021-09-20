@@ -36,7 +36,9 @@
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
                 <h2><i>PBMM Online Transaction - Inbox Penarikan PBMM</i></h2>
-                <br>
+                <h5>KlikBCA Bisnis</h5>
+                <h5>Sent : Fri 6/11/2021 12:32 PM</h5>
+                <h5>To   : RM GBK</h5>
                 <h4 style="color: red; text-align: center;">BERIKUT TERLAMPIR DETAIL TRANSAKSI PBMM, MOHON MELAKUKAN PENAWARAN SUKU BUNGA</h4>
                 <table class="table table-borderless" style="font-size: 20px;">
                     <tr>
@@ -86,14 +88,12 @@
 </body>
 <script>
     if (typeof(Storage) !== "undefined") {
-        // document.getElementById("date").innerHTML = localStorage.getItem("date");
+        document.getElementById("date").innerHTML = localStorage.getItem("date");
         document.getElementById("time").innerHTML = localStorage.getItem("time");
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-        
-        document.getElementById("date").innerHTML = localStorage.getItem("waktudeal");
     }
 </script>
 </html>

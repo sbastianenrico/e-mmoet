@@ -89,7 +89,7 @@
                         <td style="vertical-align: middle;"><input type="text" id="bunga"></td>
                     </tr>
                 </table>
-                <button>simpan</button>
+                <a href="welcome-gbk.html"><button class="btn btn-info">Kirim</button></a>
             </form>
             </div>
         </div>
@@ -97,16 +97,16 @@
 </body>
 <script>
     if (typeof(Storage) !== "undefined") {
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var time = h + '.' + m;
         document.getElementById("date").innerHTML = localStorage.getItem("date");
         document.getElementById("time").innerHTML = localStorage.getItem("time");
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-        var d = new Date();
-        var h = d.getHours();
-        var m = d.getMinutes();
-        var time = h + '.' + m;
         document.getElementById("waktudeal").innerHTML = time;
 
         var namarm = namarm.value;
