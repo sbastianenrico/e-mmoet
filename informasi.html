@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>KlikBCA Bisnis</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" href="Logo.png">
-        <link rel="stylesheet" href="css/styles.css">
-        <style type="text/css">
-            /* .dropdown-container {
-                display: none;
-                padding-left: 8px;
-            } */
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KlikBCA Bisnis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="Logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* .dropdown-container {
+            display: none;
+            padding-left: 8px;
+        } */
+    </style>
+</head>
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
@@ -61,7 +61,7 @@
                             <td id="totalfas" style="vertical-align: middle;">750,000,000</td>
                             <td id="jumlahtarik" style="vertical-align: middle;"></td>
                             <td id="availfas" style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;">31/5/2023</td>
+                            <td id="tgljatem" style="vertical-align: middle;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -86,7 +86,7 @@
                             <td id="tgltarik" style="vertical-align: middle;"></td>
                             <td id="valas" style="vertical-align: middle;"></td>
                             <td id="jmltarik" style="vertical-align: middle;"></td>
-                            <td style="vertical-align: middle;">-</td>
+                            <td id="bunga" style="vertical-align: middle;"></td>
                             <td id="tgljatem" style="vertical-align: middle;"></td>
                             <td style="vertical-align: middle;">
                                 <a href="#"><button style="background-color: #005FB1; color: white;" class="btn bi-arrow-right"></button></a>
@@ -100,13 +100,6 @@
                 <div style="text-align: right;">
                 <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
-                <!-- test localStorage -->
-                <!-- <div class="form-inline">
-                    <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
-                </div>
-                <div class="form-inline">
-                    <p>Password:&nbsp;<p id="loggedInPass"></p></p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -114,17 +107,19 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        // document.getElementById("loggedInUser").innerHTML = localStorage.getItem("user");
-        // document.getElementById("loggedInPass").innerHTML = localStorage.getItem("pass");
-        // document.getElementById("date").innerHTML = localStorage.getItem("date");
-        // document.getElementById("time").innerHTML = localStorage.getItem("time");
-        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
-        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        if(localStorage.getItem("flag") == 1){
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
 
-        //rincian fasilitas
-        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+            //rincian fasilitas
+            document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+            var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
+            var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""))
+            document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        }
     }
 
 
@@ -137,19 +132,19 @@
     }
 
 
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
+    // var dropdown = document.getElementsByClassName("dropdown-btn");
+    // var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-        } else {
-        dropdownContent.style.display = "block";
-        }
-        });
-    }
+    // for (i = 0; i < dropdown.length; i++) {
+    //     dropdown[i].addEventListener("click", function() {
+    //     this.classList.toggle("active");
+    //     var dropdownContent = this.nextElementSibling;
+    //     if (dropdownContent.style.display === "block") {
+    //     dropdownContent.style.display = "none";
+    //     } else {
+    //     dropdownContent.style.display = "block";
+    //     }
+    //     });
+    // }
 </script>
 </html>

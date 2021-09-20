@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>KlikBCA Bisnis</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" href="Logo.png">
-        <link rel="stylesheet" href="css/styles.css">
-        <style type="text/css">
-            /* .dropdown-container {
-                display: none;
-                padding-left: 8px;
-            } */
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KlikBCA Bisnis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="Logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* .dropdown-container {
+            display: none;
+            padding-left: 8px;
+        } */
+    </style>
+</head>
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
@@ -48,13 +48,6 @@
                 </div>
                 <br>
                 <p>(Segera hubungi haloBCA 1500888 apabila mengalami kendala)</p>
-                <!-- test localStorage -->
-                <!-- <div class="form-inline">
-                    <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
-                </div>
-                <div class="form-inline">
-                    <p>Password:&nbsp;<p id="loggedInPass"></p></p>
-                </div> -->
             </div>
         </div>
     </div>
@@ -62,8 +55,7 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        // document.getElementById("loggedInUser").innerHTML = localStorage.getItem("user");
-        // document.getElementById("loggedInPass").innerHTML = localStorage.getItem("pass");
+
     }
 
 
@@ -76,19 +68,19 @@
     }
 
 
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
+    // var dropdown = document.getElementsByClassName("dropdown-btn");
+    // var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-        } else {
-        dropdownContent.style.display = "block";
-        }
-        });
-    }
+    // for (i = 0; i < dropdown.length; i++) {
+    //     dropdown[i].addEventListener("click", function() {
+    //     this.classList.toggle("active");
+    //     var dropdownContent = this.nextElementSibling;
+    //     if (dropdownContent.style.display === "block") {
+    //     dropdownContent.style.display = "none";
+    //     } else {
+    //     dropdownContent.style.display = "block";
+    //     }
+    //     });
+    // }
 </script>
 </html>
