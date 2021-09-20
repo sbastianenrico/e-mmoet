@@ -86,12 +86,14 @@
 </body>
 <script>
     if (typeof(Storage) !== "undefined") {
-        document.getElementById("date").innerHTML = localStorage.getItem("date");
+        // document.getElementById("date").innerHTML = localStorage.getItem("date");
         document.getElementById("time").innerHTML = localStorage.getItem("time");
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        
+        document.getElementById("date").innerHTML = localStorage.getItem("waktudeal");
     }
 </script>
 </html>
