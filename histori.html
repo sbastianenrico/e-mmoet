@@ -12,12 +12,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="Logo.png">
     <link rel="stylesheet" href="css/styles.css">
-    <style type="text/css">
-        /* .dropdown-container {
-            display: none;
-            padding-left: 8px;
-        } */
-    </style>
 </head>
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
@@ -51,45 +45,46 @@
                     <tr>
                         <td style="vertical-align: middle; width: 38%;">Tahun</td>
                         <td style="vertical-align: middle; width: 2%;">:</td>
-                        <td style="vertical-align: middle; width: 30%;">2021</td>
-                        <td style="vertical-align: middle; width: 30%;"><a href="#" style="color: #005FB1;">Lihat Detail</a></td>
+                        <select id="tahun">
+                            <option>2021</option>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                        </select>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Bulan</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">September</td>
-                        <td style="vertical-align: middle;"><a href="#" style="color: #005FB1;">Lihat Detail</a></td>
+                        <select id="bulan">
+                            <option>Januari</option>
+                            <option>Ferbruari</option>
+                            <option>Maret</option>
+                            <option>April</option>
+                            <option>Mei</option>
+                            <option>Juni</option>
+                            <option>Juli</option>
+                            <option>Agustus</option>
+                            <option>September</option>
+                            <option>Oktober</option>
+                            <option>November</option>
+                            <option>Desember</option>
+                        </select>
                     </tr>
-                    <!-- <tr>
-                        <td style="vertical-align: middle;">No Transaksi</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">eMM01425</td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Rekening Tujuan</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">149-670-3285</td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Mata Uang</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td id="valas" style="vertical-align: middle;"></td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Jumlah</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td id="jmltarik" style="vertical-align: middle;"></td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Biaya</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">-</td>
-                    </tr> -->
                 </table>
 
                 <br><br><br>
                 <div style="text-align: right;">
-                <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
+                    <h1 style="color:red" id="alert"></h1>
+                    <button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button" onclick="lihatdetail()">Lihat Detail</button>
+                    <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
             </form>
             </div>
@@ -105,13 +100,22 @@
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
     }
 
-
     function logout() {
-    if (typeof(Storage) !== "undefined") {
-        localStorage.clear();
-    }else{
-        // Sorry! No Web Storage support..
+        if (typeof(Storage) !== "undefined") {
+            localStorage.clear();
+        }else{
+            // Sorry! No Web Storage support..
+        }
     }
+
+    function lihatdetail(){
+        var bulan = document.getElementById("bulan").value;
+        var tahun = document.getElementById("tahun").value;
+        if (bulan == "September" && tahun == "2021"){
+            window.location.assign("informasi.html");
+        } else {
+            document.getElementById("alert").innerHTML = "No Data Available !"
+        }
     }
 
     
