@@ -23,7 +23,7 @@
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
             <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
-        </a>
+        </a> 
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
         <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
@@ -36,8 +36,8 @@
                 <div class="dropdown-container">
                     <a href="informasi.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
                     <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
-                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan Suku Bunga</a>
-                    <a href="#"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
+                    <a href="tawar-suku-bunga.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
+                    <a href="histori.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
                 </div>
             </div>
 
@@ -58,9 +58,9 @@
                     <tbody style="text-align: center">
                         <tr>
                             <td style="vertical-align: middle;">IDR</td>
-                            <td style="vertical-align: middle;">750.000.000</td>
-                            <td style="vertical-align: middle;">300.000.000</td>
-                            <td style="vertical-align: middle;">450.000.000</td>
+                            <td id="totalfas" style="vertical-align: middle;">750,000,000</td>
+                            <td id="jumlahtarik" style="vertical-align: middle;"></td>
+                            <td id="availfas" style="vertical-align: middle;"></td>
                             <td style="vertical-align: middle;">31/5/2023</td>
                         </tr>
                     </tbody>
@@ -100,7 +100,7 @@
                 <div style="text-align: right;">
                 <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
-                <!-- test sessionStorage -->
+                <!-- test localStorage -->
                 <!-- <div class="form-inline">
                     <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
                 </div>
@@ -114,23 +114,28 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        // document.getElementById("date").innerHTML = sessionStorage.getItem("date");
-        // document.getElementById("time").innerHTML = sessionStorage.getItem("time");
-        document.getElementById("valas").innerHTML = sessionStorage.getItem("valas");
-        document.getElementById("jmltarik").innerHTML = sessionStorage.getItem("jmltarik");
-        document.getElementById("tgltarik").innerHTML = sessionStorage.getItem("tgltarik");
-        document.getElementById("tgljatem").innerHTML = sessionStorage.getItem("tgljatem");
-        document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
-        document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
+        // document.getElementById("loggedInUser").innerHTML = localStorage.getItem("user");
+        // document.getElementById("loggedInPass").innerHTML = localStorage.getItem("pass");
+        // document.getElementById("date").innerHTML = localStorage.getItem("date");
+        // document.getElementById("time").innerHTML = localStorage.getItem("time");
+        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+
+        //rincian fasilitas
+        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
     }
+
 
     function logout() {
     if (typeof(Storage) !== "undefined") {
-        sessionStorage.clear();
+        localStorage.clear();
     }else{
         // Sorry! No Web Storage support..
     }
     }
+
 
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;

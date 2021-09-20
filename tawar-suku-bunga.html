@@ -32,22 +32,45 @@
     <div class="container-fluid" style="height: 100%;">
         <div class="row" style="height: 100%;">
             <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
-                <a class="dropdown-btn" href="welcome.html" style="color: #005FB1;">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-container">
                     <a href="informasi.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
                     <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
-                    <a href="tawar-suku-bunga.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
+                    <a href="tawar-suku-bunga.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
                     <a href="histori.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
                 </div>
             </div>
 
-            <div class="col-md-1"></div>
-            <div class="col-md-8" style="text-align: center;">
-                <div style="background-color: skyblue; border: 3px solid #005FB1; margin-top: 25%;">
-                    <h2>Selamat Datang dalam layanan<br><b><i>Electronic Money Market Online Transaction!</i></b></h2>
-                </div>
+            <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
+                <h2><i>PBMM Online Transaction - Penawaran Suku Bunga</i></h2>
                 <br>
-                <p>(Segera hubungi haloBCA 1500888 apabila mengalami kendala)</p>
+                <h4>Rincian Pinjaman</h4>
+                <table class="table table-striped" style="font-size: 20px;">
+                    <thead style="text-align: center;">
+                        <tr>
+                            <th>No Transaksi</th>
+                            <th>Jenis</th>
+                            <th>Suku Bunga (p.a.)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center">
+                        <tr>
+                            <td style="vertical-align: middle;">eMM01425</td>
+                            <td style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;">-</td>
+                            <td style="vertical-align: middle;">
+                                <a href="tawar-suku-bunga-detail.html"><button style="background-color: green; color: white;" class="btn bi-check-lg"></button></a>
+                                <a href="#"><button style="background-color: red; color: white;" class="btn bi-x-lg"></button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br><br><br>
+                <div style="text-align: right;">
+                <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
+                </div>
                 <!-- test localStorage -->
                 <!-- <div class="form-inline">
                     <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
@@ -64,6 +87,15 @@
     if (typeof(Storage) !== "undefined") {
         // document.getElementById("loggedInUser").innerHTML = localStorage.getItem("user");
         // document.getElementById("loggedInPass").innerHTML = localStorage.getItem("pass");
+        // document.getElementById("date").innerHTML = localStorage.getItem("date");
+        // document.getElementById("time").innerHTML = localStorage.getItem("time");
+        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+
+        //rincian fasilitas
+        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
     }
 
 

@@ -10,23 +10,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script type="text/javascript">
-            function sendEmail() {
-                Email.send({
-                    Host: "smtp.gmail.com",
-                    Username : "rekeningpemblokiran21@gmail.com",
-                    Password : "testes123456qwerty",
-                    To : 'sbastianenrico@gmail.com',
-                    From : "rekeningpemblokiran21@gmail.com",
-                    Subject : "ping",
-                    Body : "ping capslock",
-                })
-                .then(function(message){
-                    alert("Mail sent successfully!")
-                });
-            }
-        </script>
         <link rel="shortcut icon" href="Logo.png">
         <link rel="stylesheet" href="css/styles.css">
         <style type="text/css">
@@ -52,30 +35,32 @@
                 <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-container">
                     <a href="informasi.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
-                    <a href="tarik-pbmm.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
                     <a href="tawar-suku-bunga.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
-                    <a href="histori.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
+                    <a href="histori.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
                 </div>
             </div>
 
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
-                <h2><i>PBMM Online Transaction - Penarikan PBMM</i></h2>
+                <h2><i>PBMM Online Transaction - Histori Transsaksi</i></h2>
                 <br>
-                <h4 style="color: red; text-align: center;">TRANSAKSI PENARIKAN PBMM TELAH DIAJUKAN, MOHON MENUNGGU PENAWARAN SUKU BUNGA</h4>
-                <br><br>
-                <table class="table table-borderless" style="font-size: 20px;">
+                <h5>Histori berdasarkan :</h5><br><br>
+                
+                <table class="table table" style="font-size: 20px;">
                     <tr>
-                        <td style="vertical-align: middle; width: 48%;">Tanggal</td>
+                        <td style="vertical-align: middle; width: 38%;">Tahun</td>
                         <td style="vertical-align: middle; width: 2%;">:</td>
-                        <td id="date" style="vertical-align: middle; width: 50%;"></td>
+                        <td style="vertical-align: middle; width: 30%;">2021</td>
+                        <td style="vertical-align: middle; width: 30%;"><a href="#" style="color: #005FB1;">Lihat Detail</a></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Jam</td>
+                        <td style="vertical-align: middle;">Bulan</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td id="time" style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;">September</td>
+                        <td style="vertical-align: middle;"><a href="#" style="color: #005FB1;">Lihat Detail</a></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td style="vertical-align: middle;">No Transaksi</td>
                         <td style="vertical-align: middle;">:</td>
                         <td style="vertical-align: middle;">eMM01425</td>
@@ -99,17 +84,13 @@
                         <td style="vertical-align: middle;">Biaya</td>
                         <td style="vertical-align: middle;">:</td>
                         <td style="vertical-align: middle;">-</td>
-                    </tr>
+                    </tr> -->
                 </table>
 
                 <br><br><br>
                 <div style="text-align: right;">
-                <a href="informasi.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
-                <a href="tarik-pbmm.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
+                <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
-                <form method="POST">
-                    <input style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button" value="Send Email" onclick="sendEmail()"/>
-                </form>
                 <!-- test localStorage -->
                 <!-- <div class="form-inline">
                     <p>Welcome,&nbsp;<p id="loggedInUser"></p></p>
@@ -141,7 +122,7 @@
         // document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
     }
 
-    
+
     function logout() {
     if (typeof(Storage) !== "undefined") {
         localStorage.clear();
