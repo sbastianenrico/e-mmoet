@@ -58,7 +58,7 @@
                     <tbody style="text-align: center">
                         <tr>
                             <td style="vertical-align: middle;">001</td>
-                            <td style="vertical-align: middle;" id="tgltarik"></td>
+                            <td style="vertical-align: middle;" id="tgltrans"></td>
                             <td style="vertical-align: middle;" id="jenis"></td>
                             <td style="vertical-align: middle;" id="valas"></td>
                             <td style="vertical-align: middle;" id="jmltarik"></td>
@@ -81,10 +81,18 @@
     if (typeof(Storage) !== "undefined") {
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
         document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
         document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
+        if (localStorage.getItem("jenis") == "Penarikan Baru"){
+            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgltarik");
+        }
+        else if (localStorage.getItem("jenis") == "Perpanjangan Pinjaman"){
+            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tglpanjang");
+        }
+        else if (localStorage.getItem("jenis") == "Pelunasan"){
+            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgllunas");
+        }
     }
     function logout() {
         if (typeof(Storage) !== "undefined") {
