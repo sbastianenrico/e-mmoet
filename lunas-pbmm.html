@@ -32,40 +32,29 @@
     <div class="container-fluid" style="height: 100%;">
         <div class="row" style="height: 100%;">
             <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
-                <a class="dropdown-btn" href="#">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-container">
-                    <a href="inbox.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Inbox</a>
+                    <a href="informasi.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
+                    <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="tawar-suku-bunga.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
+                    <a href="histori.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
                 </div>
             </div>
 
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
-                <h2><i>PBMM Online Transaction - Inbox Penarikan PBMM</i></h2>
-                <br>
-                <div class="row">
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <p style="color:limegreen;">&#9632&nbsp;</p>KlikBCA Bisnis
-                </div>
-                <p>Sent : Fri 6/11/2021 12:32 PM</p>
-                <p>To   : RM GBK</p>
-                <br>
-                <h5 style="text-align: left;">Berikut terlampir detail transaksi PBMM <br> Mohon dapat melakukan penawaran suku bunga.</h5>
-                <br>
-                <table class="table table-borderless" style="font-size: 20px;">
+                <h2><i>PBMM Online Transaction - Pelunasan PBMM</i></h2>
+                <br><br>
+                <table class="table" style="font-size: 20px;">
                     <tr>
-                        <td style="vertical-align: middle; width: 48%;">Nama Debitur</td>
+                        <td style="vertical-align: middle; width: 48%;">Jenis Fasilitas</td>
                         <td style="vertical-align: middle; width: 2%;">:</td>
-                        <td style="vertical-align: middle; width: 50%;">PT ABC</td>
+                        <td style="vertical-align: middle; width: 50%;">Pinjaman Berjangka <i>Money Market</i></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Jenis Fasilitas</td>
+                        <td style="vertical-align: middle;">No Pinjaman</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">Pinjaman Berjangka Mini Market</td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Nomor Transaksi</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;"><a href="input-suku-bunga.html">eMM01425</a></td>
+                        <td style="vertical-align: middle;">002</td>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Mata Uang</td>
@@ -78,7 +67,7 @@
                         <td id="jmltarik" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Tanggal Penarikan</td>
+                        <td style="vertical-align: middle;">Tanggal Transaksi</td>
                         <td style="vertical-align: middle;">:</td>
                         <td id="tgltarik" style="vertical-align: middle;"></td>
                     </tr>
@@ -87,16 +76,33 @@
                         <td style="vertical-align: middle;">:</td>
                         <td id="tgljatem" style="vertical-align: middle;"></td>
                     </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Masukkan 8 Digit berikut pada KeyBCA</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;">987 03285</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle; color: red"><b>PASTIKAN 6 DIGIT TERAKHIR SAMA DENGAN NOMOR REKENING ANDA</b></td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: middle;">Respon KeyBCA Appli 2</td>
+                        <td style="vertical-align: middle;">:</td>
+                        <td style="vertical-align: middle;"><input type="password" class="form-control"></td>
+                    </tr>
                 </table>
 
-                <br><br>
-                <p>*Klik pada nomor transaksi untuk melanjutkan penginputan suku bunga.</p>
-                <p>Terima kasih.</p>
+                <br><br><br>
+                <div style="text-align: right;">
+                <a href="lunas-pbmm-detail.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Lanjut</button></a>
+                </div>
             </form>
             </div>
         </div>
     </div>
 </body>
+
 <script>
     if (typeof(Storage) !== "undefined") {
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
@@ -114,7 +120,7 @@
     // }
     // }
 
-    
+
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;
 
@@ -129,5 +135,30 @@
     //     }
     //     });
     // }
+
+    $('input.number').keyup(function(event) {
+        if(event.which >= 37 && event.which <= 40){
+            event.preventDefault();
+        }
+
+        $(this).val(function(index, value) {
+            value = value.replace(/,/g,'');
+            return numberWithCommas(value);
+        });
+    });
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
+    $('.strip').keyup(function() {
+        var foo = $(this).val().split("-").join(""); // remove hyphens
+        if (foo.length > 0) {
+            foo = foo.match(new RegExp('.{1,3}', 'g')).join("-");
+        }
+        $(this).val(foo);
+    });
 </script>
 </html>

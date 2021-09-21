@@ -32,36 +32,34 @@
     <div class="container-fluid" style="height: 100%;">
         <div class="row" style="height: 100%;">
             <div class="col-md-2 sidebar" style="margin-left: 20px; border-right: 1px solid grey;">
-                <a class="dropdown-btn" href="#">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
+                <a class="dropdown-btn" href="welcome.html">PBMM Online Transaction <i class="bi bi-caret-down-fill"></i></a>
                 <div class="dropdown-container">
-                    <a href="inbox.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Inbox</a>
+                    <a href="informasi.html" style="color: #005FB1;"><i class="bi bi-caret-down-fill" style="color:gold"></i> Informasi Plafon dan O/S</a>
+                    <a href="tarik-pbmm.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penarikan PBMM</a>
+                    <a href="tawar-suku-bunga.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Penawaran Suku Bunga</a>
+                    <a href="histori.html"><i class="bi bi-caret-down-fill" style="color:gold"></i> Histori Transaksi</a>
                 </div>
             </div>
 
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
-                <h2><i>Input Suku Bunga PBMM oleh GBK</i></h2>
-                <br>
-                <table class="table table-borderless" style="font-size: 20px;">
+                <h2><i>PBMM Online Transaction - Perpanjangan PBMM</i></h2>
+                <br><br>
+                <table class="table" style="font-size: 20px;">
                     <tr>
-                        <td style="vertical-align: middle; width: 48%;">Nama Debitur</td>
+                        <td style="vertical-align: middle; width: 48%;">Jenis Fasilitas</td>
                         <td style="vertical-align: middle; width: 2%;">:</td>
-                        <td style="vertical-align: middle; width: 50%;">PT ABC</td>
+                        <td style="vertical-align: middle; width: 50%;">Pinjaman Berjangka <i>Money Market</i></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Jenis Fasilitas</td>
+                        <td style="vertical-align: middle;">No Pinjaman</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;">Pinjaman Berjangka Money Market</td>
-                    </tr>
-                    <tr>
-                        <td style="vertical-align: middle;">Nomor Transaksi</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;"><a href="input-suku-bunga.html">eMM01425</a></td>
+                        <td style="vertical-align: middle;">001</td>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Mata Uang</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td  id="valas" style="vertical-align: middle;"></td>
+                        <td id="valas" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Jumlah Penarikan</td>
@@ -69,60 +67,48 @@
                         <td id="jmltarik" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Tanggal Penarikan</td>
+                        <td style="vertical-align: middle;">Tanggal Transaksi</td>
                         <td style="vertical-align: middle;">:</td>
                         <td id="tgltarik" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Tanggal Jatuh Tempo</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td id="tgljatem" style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"><input type="date" class="form-control" id="tgltrans"></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Waktu Dealing</td>
+                        <td style="vertical-align: middle;">Masukkan 8 Digit berikut pada KeyBCA</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td id="waktudeal" style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;">987 03285</td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Nama RM</td>
-                        <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;"><input type="text" class="form-control" id="rmgbk"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle;"></td>
+                        <td style="vertical-align: middle; color: red"><b>PASTIKAN 6 DIGIT TERAKHIR SAMA DENGAN NOMOR REKENING ANDA</b></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Suku Bunga</td>
+                        <td style="vertical-align: middle;">Respon KeyBCA Appli 2</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;" class="form-inline"><input type="text" class="form-control"  id="sbunga" style="width: 50%">&nbsp;p.a.</td>
+                        <td style="vertical-align: middle;"><input type="password" class="form-control"></td>
                     </tr>
                 </table>
+
+                <br><br><br>
                 <div style="text-align: right;">
-                    <a href="tawar-suku-bunga.html" onclick="return input()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kirim</button></a>
+                <a href="ppj-pbmm-detail.html" onclick="return perpanjang()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Lanjut</button></a>
                 </div>
             </form>
             </div>
         </div>
     </div>
 </body>
+
 <script>
     if (typeof(Storage) !== "undefined") {
-        var now = new Date();
-        var time = now.getHours()+'.'+now.getMinutes();
-
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-        document.getElementById("waktudeal").innerHTML = time;
-    }
-
-
-    function input(){
-        if (typeof(Storage) !== "undefined"){
-            var namarm = rmgbk.value;
-            var bunga = sbunga.value;
-
-            localStorage.setItem("namarm", namarm);
-            localStorage.setItem("bunga", bunga);
-        }
     }
 
 
@@ -134,7 +120,30 @@
     // }
     // }
 
-    
+    // function tarik() {
+    // if (typeof(Storage) !== "undefined") {
+    //     var now = new Date();
+    //     var date = now.getDate()+'/'+(now.getMonth()+1)+'/'+now.getFullYear();
+    //     var time = now.getHours()+'.'+now.getMinutes();
+    //     var valuta = valas.value;
+    //     var jumlahtarik = jmltarik.value;
+    //     var tanggaltarik = tgltarik.value;
+    //     var tanggaljatem = tgljatem.value;
+
+    //     localStorage.setItem("date", date);
+    //     localStorage.setItem("time", time);
+    //     localStorage.setItem("valas", valuta);
+    //     localStorage.setItem("jmltarik", jumlahtarik);
+    //     localStorage.setItem("tgltarik", tanggaltarik);
+    //     localStorage.setItem("tgljatem", tanggaljatem);
+    //     localStorage.setItem("jenis", "Perpanjangan");
+    //     localStorage.setItem("flag", 1);
+    // }else{
+    //     // Sorry! No Web Storage support..
+    // }
+    // }
+
+
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;
 
@@ -149,5 +158,30 @@
     //     }
     //     });
     // }
+
+    $('input.number').keyup(function(event) {
+        if(event.which >= 37 && event.which <= 40){
+            event.preventDefault();
+        }
+
+        $(this).val(function(index, value) {
+            value = value.replace(/,/g,'');
+            return numberWithCommas(value);
+        });
+    });
+
+    function numberWithCommas(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+    }
+
+    $('.strip').keyup(function() {
+        var foo = $(this).val().split("-").join(""); // remove hyphens
+        if (foo.length > 0) {
+            foo = foo.match(new RegExp('.{1,3}', 'g')).join("-");
+        }
+        $(this).val(foo);
+    });
 </script>
 </html>
