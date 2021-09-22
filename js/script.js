@@ -20,7 +20,7 @@ function logout() {
 
 // penarikan pbmm
 function tarik() {
-    if (typeof(Storage) !== "undefined") {
+    // if (typeof(Storage) !== "undefined") {
         var now = new Date();
         var date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate();
         var time = now.getHours()+'.'+now.getMinutes();
@@ -74,9 +74,9 @@ function tarik() {
             localStorage.setItem("nomor", "001");
         // }
         
-    }else{
+    // }else{
         // Sorry! No Web Storage support..
-    }
+    // }
 }
 
 function acc() {
