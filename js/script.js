@@ -39,7 +39,7 @@ function tarik() {
         // localStorage.setItem("flag", 1);
         // localStorage.setItem("nomor", "001");
 
-        if (localStorage.getItem("jmltarik")!='') {
+        if (localStorage.getItem("jmltarik")=='') {
             localStorage.setItem("date", date);
             localStorage.setItem("time", time);
             localStorage.setItem("valas", valuta);
@@ -50,7 +50,7 @@ function tarik() {
             localStorage.setItem("flag", 1);
             localStorage.setItem("nomor", "001");
         }
-        else if (localStorage.getItem("jmltarik1")!=''){
+        else if (localStorage.getItem("jmltarik1")==''){
             localStorage.setItem("date1", date);
             localStorage.setItem("time1", time);
             localStorage.setItem("valas1", valuta);
@@ -61,7 +61,7 @@ function tarik() {
             localStorage.setItem("flag1", 1);
             localStorage.setItem("nomor1", "002");
         }
-        else if (localStorage.getItem("jmltarik2")!=''){
+        else if (localStorage.getItem("jmltarik2")==''){
             localStorage.setItem("date2", date);
             localStorage.setItem("time2", time);
             localStorage.setItem("valas2", valuta);
