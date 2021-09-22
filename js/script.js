@@ -63,7 +63,7 @@ function tarik() {
             localStorage.setItem("nomor1", "002");
             localStorage.setItem("flagtarik", "2");
         }
-        else if (localStorage.getItem("jmltarik1")!=''){
+        else if (localStorage.getItem("flagtarik")=='2'){
             localStorage.setItem("date2", date);
             localStorage.setItem("time2", time);
             localStorage.setItem("valas2", valuta);
