@@ -133,10 +133,10 @@
 <script>
     if (typeof(Storage) !== "undefined") {
         //rincian fasilitas
-        // document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
-        // var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
-        // var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
-        // document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+        var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
+        var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
+        document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
 
 
         if (localStorage.getItem("flagtarik")=='1'){
