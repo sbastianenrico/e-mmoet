@@ -138,6 +138,23 @@
         var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
         document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
 
+
+        if (localStorage.getItem("flagtarik")=='0'){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+        }
+        if (localStorage.getItem("flagtarik")=='1'){
+            document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor1");
+            document.getElementById("valas1").innerHTML = localStorage.getItem("valas1");
+            document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik1");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik1");
+            document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatem1");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga1");
+        }
         if (localStorage.getItem("flagtarik")=='2'){
             document.getElementById("nomor2").innerHTML = localStorage.getItem("nomor2");
             document.getElementById("valas2").innerHTML = localStorage.getItem("valas2");
@@ -145,22 +162,6 @@
             document.getElementById("tgltarik2").innerHTML = localStorage.getItem("tgltarik2");
             document.getElementById("tgljatem2").innerHTML = localStorage.getItem("tgljatem2");
             document.getElementById("bunga2").innerHTML = localStorage.getItem("bunga2");
-            if (localStorage.getItem("flagtarik")=='1'){
-                document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor1");
-                document.getElementById("valas1").innerHTML = localStorage.getItem("valas1");
-                document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik1");
-                document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik1");
-                document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatem1");
-                document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga1");
-                if (localStorage.getItem("flagtarik")=='0'){
-                    document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
-                    document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-                    document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-                    document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
-                    document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-                    document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-                }
-            }
         }
         
         // }
