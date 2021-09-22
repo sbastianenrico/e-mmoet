@@ -43,7 +43,7 @@
 
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
-                <h2><i>PBMM Online Transaction - Inbox Penarikan PBMM</i></h2>
+                <h2 id="flagg" ><i></i></h2>
                 <br>
                 <div class="row">
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -81,7 +81,7 @@
                         <td id="jmltarik" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
-                        <td style="vertical-align: middle;">Tanggal Penarikan</td>
+                        <td id="tgl" style="vertical-align: middle;"></td>
                         <td style="vertical-align: middle;">:</td>
                         <td id="tgltarik" style="vertical-align: middle;"></td>
                     </tr>
@@ -102,10 +102,24 @@
 </body>
 <script>
     if (typeof(Storage) !== "undefined") {
-        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-        document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
-        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        if(localStorage.getItem("flag") == 3){
+            document.getElementById("flagg").innerHTML = "PBMM Online Transaction - Inbox Perpanjangan PBMM";
+            document.getElementById("tgl").innerHTML = "Tanggal Perpanjangan";
+
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
+        }
+        else{
+            document.getElementById("flagg").innerHTML = "PBMM Online Transaction - Inbox Penarikan PBMM";
+            document.getElementById("tgl").innerHTML = "Tanggal Penarikan";
+
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        }
     }
     
     // var dropdown = document.getElementsByClassName("dropdown-btn");

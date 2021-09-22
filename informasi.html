@@ -115,18 +115,19 @@
             document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-        }else if(localStorage.getItem("flag") == 3){
+        }
+        else if(localStorage.getItem("flag") == 3){
             document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
             document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
-            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bungap");
         }else{
             document.getElementById("flag").style.display = "none";
         }
 
-                //rincian fasilitas
+        //rincian fasilitas
         if(localStorage.getItem("flag") == 4){
             document.getElementById("jumlahtarik").innerHTML = 0;
             document.getElementById("availfas").innerHTML = document.getElementById("totalfas").innerHTML;

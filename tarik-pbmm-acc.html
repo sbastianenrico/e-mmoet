@@ -122,17 +122,24 @@
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-        document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
 
-        //jumlah bunga
-        var sukubunga = parseFloat(localStorage.getItem("bunga"))
-        var jumlahbunga = parseFloat(localStorage.getItem("jmltarik").replace(/,/g,"") * (sukubunga / 100));
-        var jumlahhari = new Date(localStorage.getItem("tgljatem")).getDate() - new Date(localStorage.getItem("tgltarik")).getDate();
-        var totalbunga = jumlahbunga * jumlahhari / 360;
+        if(localStorage.getItem("flag") == 2){
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga") + " p.a.";
+            var sukubunga = parseFloat(localStorage.getItem("bunga"))
+            var jumlahbunga = parseFloat(localStorage.getItem("jmltarik").replace(/,/g,"") * (sukubunga / 100));
+            var jumlahhari = new Date(localStorage.getItem("tgljatem")).getDate() - new Date(localStorage.getItem("tgltarik")).getDate();
+            var totalbunga = jumlahbunga * jumlahhari / 360;
+            document.getElementById("jmlbunga").innerHTML = totalbunga.toLocaleString('en-US');
+        }
+        else if (localStorage.getItem("flag") == 3){
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bungap") + " p.a.";
+            var sukubunga = parseFloat(localStorage.getItem("bungap"))
+            var jumlahbunga = parseFloat(localStorage.getItem("jmltarik").replace(/,/g,"") * (sukubunga / 100));
+            var jumlahhari = new Date(localStorage.getItem("tgljatem")).getDate() - new Date(localStorage.getItem("tgltarik")).getDate();
+            var totalbunga = jumlahbunga * jumlahhari / 360;
         document.getElementById("jmlbunga").innerHTML = totalbunga.toLocaleString('en-US');
+        }
     }
-
-    localStorage.setItem("flag", 2);
     
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;

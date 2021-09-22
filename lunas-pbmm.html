@@ -112,9 +112,15 @@
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
         if(localStorage.getItem("flag") == 2){
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            if(new Date(localStorage.getItem("tgltarik")) > new Date(localStorage.getItem("tgljatem"))){
+                
+            }
         }
         else{
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
+            if(new Date(localStorage.getItem("tgltarik")) > new Date(localStorage.getItem("tgljatemp"))){
+                
+            }
         }
     }
 

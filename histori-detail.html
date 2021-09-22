@@ -90,8 +90,6 @@
                 <br><br><br>
                 <div style="text-align: right;">
                 <a href="histori.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
-            
-                <p><p id="flag"></p></p>
             </div>
             </div>
         </div>
@@ -100,8 +98,6 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        document.getElementById("flag").innerHTML = localStorage.getItem("flag");
-
         if(localStorage.getItem("flag") == 2){
             document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas").innerHTML = localStorage.getItem("valas");
@@ -123,9 +119,9 @@
             document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas1").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik");
-            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatemp");
-            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bungap");
             document.getElementById("jenis1").innerHTML = localStorage.getItem("jenisp");
         }
         else if(localStorage.getItem("flag") == 4){
@@ -140,9 +136,9 @@
             document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas1").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik");
-            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatemp");
-            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bungap");
             document.getElementById("jenis1").innerHTML = localStorage.getItem("jenisp");
 
             document.getElementById("nomor2").innerHTML = localStorage.getItem("nomor");
@@ -150,7 +146,7 @@
             document.getElementById("jmltarik2").innerHTML = localStorage.getItem("jmltarik");
             document.getElementById("tgltarik2").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem2").innerHTML = localStorage.getItem("tgljatem");
-            document.getElementById("bunga2").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("bunga2").innerHTML = localStorage.getItem("bungap");
             document.getElementById("jenis2").innerHTML = localStorage.getItem("jenisl");
         }
 

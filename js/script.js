@@ -84,7 +84,11 @@ function acc() {
     var time = now.getHours()+'.'+now.getMinutes();
 
     localStorage.setItem("time", time);
-    localStorage.setItem("flag", 2);
+    if (localStorage.getItem("flag") == '1'){
+        localStorage.setItem("flag", 2);
+    }else if (localStorage.getItem("flag") == '3'){
+
+    }
     
 }
 
@@ -110,9 +114,13 @@ function input() {
     if (typeof(Storage) !== "undefined"){
         var namarm = rmgbk.value;
         var bunga = sbunga.value + "%";
-
+        if (localStorage.getItem("flag") == '1'){
+            localStorage.setItem("bunga", bunga);
+        }
+        else if (localStorage.getItem("flag") == '3'){
+            localStorage.setItem("bungap", bunga);
+        }
         localStorage.setItem("namarm", namarm);
-        localStorage.setItem("bunga", bunga);
     }
 }
 
@@ -134,7 +142,7 @@ function ppj(){
     }
 }
 
-// pelunasan
+// pelunasan pbmm
 function lunas(){
     if (typeof(Storage) !== "undefined") {
         var now = new Date();
@@ -150,7 +158,7 @@ function lunas(){
     }
 }
 
-// histori
+// histori transaksi
 function lihatdetail(){
     var bulan = document.getElementById("bulan").value;
     var tahun = document.getElementById("tahun").value;

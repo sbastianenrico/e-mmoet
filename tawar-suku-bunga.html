@@ -56,10 +56,20 @@
                         </tr>
                     </thead>
                     <tbody id="flag" style="text-align: center">
-                        <tr>
+                        <tr id="flagg">
                             <td style="vertical-align: middle;">eMM01425</td>
                             <td id="jenis" style="vertical-align: middle;"></td>
                             <td id="bunga" style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;">
+                                <a href="tawar-suku-bunga-detail.html"><button style="background-color: limegreen; color: white;" class="btn bi-check-lg"></button></a>
+                                <a href="tawar-suku-bunga.html" onclick="return del()"><button style="background-color: red; color: white;" class="btn bi-x-lg"></button></a>
+                            </td>
+                        </tr>
+                        <tr id="flaggg">
+                            <td style="vertical-align: middle;">eMM01425</td>
+                            <td id="jenisp" style="vertical-align: middle;"></td>
+                            <td id="bungap" style="vertical-align: middle;"></td>
+
                             <td style="vertical-align: middle;">
                                 <a href="tawar-suku-bunga-detail.html"><button style="background-color: limegreen; color: white;" class="btn bi-check-lg"></button></a>
                                 <a href="tawar-suku-bunga.html" onclick="return del()"><button style="background-color: red; color: white;" class="btn bi-x-lg"></button></a>
@@ -70,8 +80,8 @@
 
                 <br><br><br>
                 <div style="text-align: right;">
-                <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
-                </div>
+                <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a> 
+            </div>
             </div>
         </div>
     </div>
@@ -80,9 +90,19 @@
 <script>
     if (typeof(Storage) !== "undefined") {
         if(localStorage.getItem("flag") == 1){
+            document.getElementById("flaggg").style.display = "none";
             document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-        }else{
+        }
+        else if (localStorage.getItem("flag") == 3 && localStorage.getItem("ppjbunga") == 1){
+            document.getElementById("flag").style.display = "none";
+        }
+        else if (localStorage.getItem("flag") == 3){
+            document.getElementById("flagg").style.display = "none";
+            document.getElementById("jenisp").innerHTML = localStorage.getItem("jenisp");
+            document.getElementById("bungap").innerHTML = localStorage.getItem("bungap");
+        }
+        else{
             document.getElementById("flag").style.display = "none";
         }
     }
