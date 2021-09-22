@@ -83,12 +83,36 @@
                     </thead>
                     <tbody id="flag" style="text-align: center">
                         <tr>
-                            <td id="nomor" style="vertical-align: middle;"></td>
-                            <td id="tgltarik" style="vertical-align: middle;"></td>
-                            <td id="valas" style="vertical-align: middle;"></td>
-                            <td id="jmltarik" style="vertical-align: middle;"></td>
-                            <td id="bunga" style="vertical-align: middle;"></td>
-                            <td id="tgljatem" style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;" id="nomor"></td>
+                            <td style="vertical-align: middle;" id="tgltarik"></td>
+                            <td style="vertical-align: middle;" id="valas"></td>
+                            <td style="vertical-align: middle;" id="jmltarik"></td>
+                            <td style="vertical-align: middle;" id="bunga"></td>
+                            <td style="vertical-align: middle;" id="tgljatem"></td>
+                            <td style="vertical-align: middle;">
+                                <a href="ppj-pbmm.html"><button style="background-color: orange; color: white;" class="btn bi-arrow-right"></button></a>
+                                <a href="lunas-pbmm.html"><button style="background-color: limegreen; color: white;" class="btn bi-arrow-counterclockwise"></button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;" id="nomor1"></td>
+                            <td style="vertical-align: middle;" id="tgltarik1"></td>
+                            <td style="vertical-align: middle;" id="valas1"></td>
+                            <td style="vertical-align: middle;" id="jmltarik1"></td>
+                            <td style="vertical-align: middle;" id="bunga1"></td>
+                            <td style="vertical-align: middle;" id="tgljatem1"></td>
+                            <td style="vertical-align: middle;">
+                                <a href="ppj-pbmm.html"><button style="background-color: orange; color: white;" class="btn bi-arrow-right"></button></a>
+                                <a href="lunas-pbmm.html"><button style="background-color: limegreen; color: white;" class="btn bi-arrow-counterclockwise"></button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: middle;" id="nomor2"></td>
+                            <td style="vertical-align: middle;" id="tgltarik2"></td>
+                            <td style="vertical-align: middle;" id="valas2"></td>
+                            <td style="vertical-align: middle;" id="jmltarik2"></td>
+                            <td style="vertical-align: middle;" id="bunga2"></td>
+                            <td style="vertical-align: middle;" id="tgljatem2"></td>
                             <td style="vertical-align: middle;">
                                 <a href="ppj-pbmm.html"><button style="background-color: orange; color: white;" class="btn bi-arrow-right"></button></a>
                                 <a href="lunas-pbmm.html"><button style="background-color: limegreen; color: white;" class="btn bi-arrow-counterclockwise"></button></a>
@@ -114,16 +138,35 @@
         var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
         document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
 
-        if(localStorage.getItem("flag") == 2){
+        // if(localStorage.getItem("flag") == 2){
+        if(localStorage.getItem("jmltarik2") !=""){
+            document.getElementById("nomor2").innerHTML = localStorage.getItem("nomor2");
+            document.getElementById("valas2").innerHTML = localStorage.getItem("valas2");
+            document.getElementById("jmltarik2").innerHTML = localStorage.getItem("jmltarik2");
+            document.getElementById("tgltarik2").innerHTML = localStorage.getItem("tgltarik2");
+            document.getElementById("tgljatem2").innerHTML = localStorage.getItem("tgljatem2");
+            document.getElementById("bunga2").innerHTML = localStorage.getItem("bunga2");
+        }
+        if(localStorage.getItem("jmltarik1") !=""){
+            document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor1");
+            document.getElementById("valas1").innerHTML = localStorage.getItem("valas1");
+            document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik1");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik1");
+            document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatem1");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga1");
+        }
+        if(localStorage.getItem("jmltarik") !=""){
             document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
             document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-        }else{
-            document.getElementById("flag").style.display = "none";
         }
+        // }
+        // else {
+        //     document.getElementById("flag").style.display = "none";
+        // }
     }
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");
