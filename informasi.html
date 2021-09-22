@@ -133,13 +133,13 @@
 <script>
     if (typeof(Storage) !== "undefined") {
         //rincian fasilitas
-        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
-        var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
-        var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
-        document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        // document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+        // var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
+        // var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
+        // document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
 
 
-        if (localStorage.getItem("flagtarik")=='0'){
+        if (localStorage.getItem("flagtarik")=='1'){
             document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
@@ -147,7 +147,7 @@
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
         }
-        if (localStorage.getItem("flagtarik")=='1'){
+        if (localStorage.getItem("flagtarik")=='2'){
             document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor1");
             document.getElementById("valas1").innerHTML = localStorage.getItem("valas1");
             document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik1");
@@ -155,7 +155,7 @@
             document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatem1");
             document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga1");
         }
-        if (localStorage.getItem("flagtarik")=='2'){
+        if (localStorage.getItem("flagtarik")=='3'){
             document.getElementById("nomor2").innerHTML = localStorage.getItem("nomor2");
             document.getElementById("valas2").innerHTML = localStorage.getItem("valas2");
             document.getElementById("jmltarik2").innerHTML = localStorage.getItem("jmltarik2");
