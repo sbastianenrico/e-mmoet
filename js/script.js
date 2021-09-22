@@ -40,7 +40,7 @@ function tarik() {
         // localStorage.setItem("nomor", "001");
 
 
-        if (localStorage.getItem("jmltarik2")==''){
+        if (localStorage.getItem("jmltarik1")!=''){
             localStorage.setItem("date2", date);
             localStorage.setItem("time2", time);
             localStorage.setItem("valas2", valuta);
@@ -51,7 +51,7 @@ function tarik() {
             localStorage.setItem("flag2", 1);
             localStorage.setItem("nomor2", "003");
         }
-        else if (localStorage.getItem("jmltarik1")==''){
+        else if (localStorage.getItem("jmltarik")!=''){
             localStorage.setItem("date1", date);
             localStorage.setItem("time1", time);
             localStorage.setItem("valas1", valuta);
