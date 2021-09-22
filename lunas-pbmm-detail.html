@@ -111,7 +111,12 @@
         document.getElementById("timel").innerHTML = localStorage.getItem("timel");
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-        document.getElementById("tgljatemp").innerHTML = localStorage.getItem("tgljatemp");
+        if(localStorage.getItem("flag") == 2){
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        }
+        else{
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
+        }
     }
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");

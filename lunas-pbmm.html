@@ -75,7 +75,7 @@
                     <tr>
                         <td style="vertical-align: middle;">Tanggal Jatuh Tempo</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td id="tgljatemp" style="vertical-align: middle;"></td>
+                        <td id="tgljatem" style="vertical-align: middle;"></td>
                     </tr>
                     <tr>
                         <td style="vertical-align: middle;">Masukkan 8 Digit berikut pada KeyBCA</td>
@@ -110,7 +110,12 @@
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
         document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
         document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
-        document.getElementById("tgljatemp").innerHTML = localStorage.getItem("tgljatemp");
+        if(localStorage.getItem("flag") == 2){
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+        }
+        else{
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
+        }
     }
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");
