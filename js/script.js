@@ -40,29 +40,29 @@ function tarik() {
         // localStorage.setItem("nomor", "001");
 
 
-        if (localStorage.getItem("jmltarik1")!=''){
-            localStorage.setItem("date2", date);
-            localStorage.setItem("time2", time);
-            localStorage.setItem("valas2", valuta);
-            localStorage.setItem("jmltarik2", jumlahtarik);
-            localStorage.setItem("tgltarik2", tanggaltarik);
-            localStorage.setItem("tgljatem2", tanggaljatem);
-            localStorage.setItem("jenis2", "Penarikan Baru");
-            localStorage.setItem("flag2", 1);
-            localStorage.setItem("nomor2", "003");
-        }
-        else if (localStorage.getItem("jmltarik")!=''){
-            localStorage.setItem("date1", date);
-            localStorage.setItem("time1", time);
-            localStorage.setItem("valas1", valuta);
-            localStorage.setItem("jmltarik1", jumlahtarik);
-            localStorage.setItem("tgltarik1", tanggaltarik);
-            localStorage.setItem("tgljatem1", tanggaljatem);
-            localStorage.setItem("jenis1", "Penarikan Baru");
-            localStorage.setItem("flag1", 1);
-            localStorage.setItem("nomor1", "002");
-        }
-        else {
+        // if (localStorage.getItem("jmltarik1")!=''){
+        //     localStorage.setItem("date2", date);
+        //     localStorage.setItem("time2", time);
+        //     localStorage.setItem("valas2", valuta);
+        //     localStorage.setItem("jmltarik2", jumlahtarik);
+        //     localStorage.setItem("tgltarik2", tanggaltarik);
+        //     localStorage.setItem("tgljatem2", tanggaljatem);
+        //     localStorage.setItem("jenis2", "Penarikan Baru");
+        //     localStorage.setItem("flag2", 1);
+        //     localStorage.setItem("nomor2", "003");
+        // }
+        // else if (localStorage.getItem("jmltarik")!=''){
+        //     localStorage.setItem("date1", date);
+        //     localStorage.setItem("time1", time);
+        //     localStorage.setItem("valas1", valuta);
+        //     localStorage.setItem("jmltarik1", jumlahtarik);
+        //     localStorage.setItem("tgltarik1", tanggaltarik);
+        //     localStorage.setItem("tgljatem1", tanggaljatem);
+        //     localStorage.setItem("jenis1", "Penarikan Baru");
+        //     localStorage.setItem("flag1", 1);
+        //     localStorage.setItem("nomor1", "002");
+        // }
+        // else {
             localStorage.setItem("date", date);
             localStorage.setItem("time", time);
             localStorage.setItem("valas", valuta);
@@ -72,7 +72,7 @@ function tarik() {
             localStorage.setItem("jenis", "Penarikan Baru");
             localStorage.setItem("flag", 1);
             localStorage.setItem("nomor", "001");
-        }
+        // }
         
     }else{
         // Sorry! No Web Storage support..
