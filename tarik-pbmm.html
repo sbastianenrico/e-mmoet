@@ -20,7 +20,7 @@
         } */
     </style>
 </head>
-<body style="height: 100%;">
+<body style="height: 100%;" onload="autofill()">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
             <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
@@ -104,7 +104,7 @@
                     <tr>
                         <td style="vertical-align: middle;">Respon KeyBCA Appli 2</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;"><input type="password" class="form-control"></td>
+                        <td style="vertical-align: middle;"><input type="password" class="form-control" id="password"></td>
                     </tr>
                 </table>
 
@@ -138,6 +138,13 @@
     //     }
     //     });
     // }
+
+    function autofill(){
+        document.getElementById("jmltarik").value = "1,000,000";
+        document.getElementById("tgltarik").value = "2021-09-22";
+        document.getElementById("tgljatem").value = "2021-09-24";
+        document.getElementById("password").value = "123456";
+    }
 
     // number with thousands separator
     $('input.number').keyup(function(event) {
