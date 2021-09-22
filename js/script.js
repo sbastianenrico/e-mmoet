@@ -39,16 +39,17 @@ function tarik() {
         // localStorage.setItem("flag", 1);
         // localStorage.setItem("nomor", "001");
 
-        if (localStorage.getItem("jmltarik")=='') {
-            localStorage.setItem("date", date);
-            localStorage.setItem("time", time);
-            localStorage.setItem("valas", valuta);
-            localStorage.setItem("jmltarik", jumlahtarik);
-            localStorage.setItem("tgltarik", tanggaltarik);
-            localStorage.setItem("tgljatem", tanggaljatem);
-            localStorage.setItem("jenis", "Penarikan Baru");
-            localStorage.setItem("flag", 1);
-            localStorage.setItem("nomor", "001");
+
+        if (localStorage.getItem("jmltarik2")==''){
+            localStorage.setItem("date2", date);
+            localStorage.setItem("time2", time);
+            localStorage.setItem("valas2", valuta);
+            localStorage.setItem("jmltarik2", jumlahtarik);
+            localStorage.setItem("tgltarik2", tanggaltarik);
+            localStorage.setItem("tgljatem2", tanggaljatem);
+            localStorage.setItem("jenis2", "Penarikan Baru");
+            localStorage.setItem("flag2", 1);
+            localStorage.setItem("nomor2", "003");
         }
         else if (localStorage.getItem("jmltarik1")==''){
             localStorage.setItem("date1", date);
@@ -61,16 +62,16 @@ function tarik() {
             localStorage.setItem("flag1", 1);
             localStorage.setItem("nomor1", "002");
         }
-        else if (localStorage.getItem("jmltarik2")==''){
-            localStorage.setItem("date2", date);
-            localStorage.setItem("time2", time);
-            localStorage.setItem("valas2", valuta);
-            localStorage.setItem("jmltarik2", jumlahtarik);
-            localStorage.setItem("tgltarik2", tanggaltarik);
-            localStorage.setItem("tgljatem2", tanggaljatem);
-            localStorage.setItem("jenis2", "Penarikan Baru");
-            localStorage.setItem("flag2", 1);
-            localStorage.setItem("nomor2", "003");
+        else {
+            localStorage.setItem("date", date);
+            localStorage.setItem("time", time);
+            localStorage.setItem("valas", valuta);
+            localStorage.setItem("jmltarik", jumlahtarik);
+            localStorage.setItem("tgltarik", tanggaltarik);
+            localStorage.setItem("tgljatem", tanggaljatem);
+            localStorage.setItem("jenis", "Penarikan Baru");
+            localStorage.setItem("flag", 1);
+            localStorage.setItem("nomor", "001");
         }
         
     }else{
