@@ -10,7 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="Logo.png">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         /* .dropdown-container {
@@ -22,11 +23,11 @@
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
         </a>
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -119,41 +120,9 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-
+        // document.getElementById("loggedInUser").innerHTML = sessionStorage.getItem("user");
+        // document.getElementById("loggedInPass").innerHTML = sessionStorage.getItem("pass");
     }
-
-
-    // function logout() {
-    // if (typeof(Storage) !== "undefined") {
-    //     localStorage.clear();
-    // }else{
-    //     // Sorry! No Web Storage support..
-    // }
-    // }
-
-    function tarik() {
-    if (typeof(Storage) !== "undefined") {
-        var now = new Date();
-        var date = now.getDate()+'/'+(now.getMonth()+1)+'/'+now.getFullYear();
-        var time = now.getHours()+'.'+now.getMinutes();
-        var valuta = valas.value;
-        var jumlahtarik = jmltarik.value;
-        var tanggaltarik = tgltarik.value;
-        var tanggaljatem = tgljatem.value;
-
-        localStorage.setItem("date", date);
-        localStorage.setItem("time", time);
-        localStorage.setItem("valas", valuta);
-        localStorage.setItem("jmltarik", jumlahtarik);
-        localStorage.setItem("tgltarik", tanggaltarik);
-        localStorage.setItem("tgljatem", tanggaljatem);
-        localStorage.setItem("jenis", "Penarikan Baru");
-        localStorage.setItem("flag", 1);
-    }else{
-        // Sorry! No Web Storage support..
-    }
-    }
-
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;
@@ -170,6 +139,7 @@
     //     });
     // }
 
+    // number with thousands separator
     $('input.number').keyup(function(event) {
         if(event.which >= 37 && event.which <= 40){
             event.preventDefault();

@@ -95,7 +95,7 @@
 
                 <br><br><br>
                 <div style="text-align: right;">
-                <a href="ppj-pbmm-detail.html" onclick="return perpanjang()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Lanjut</button></a>
+                <a href="ppj-pbmm-detail.html" onclick="return ppj()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Lanjut</button></a>
                 </div>
             </form>
             </div>
@@ -119,6 +119,14 @@
     //     // Sorry! No Web Storage support..
     // }
     // }
+
+    function ppj(){
+    if (typeof(Storage) !== "undefined") {
+        
+    }else{
+        // Sorry! No Web Storage support..
+    }
+    }
 
     // function tarik() {
     // if (typeof(Storage) !== "undefined") {

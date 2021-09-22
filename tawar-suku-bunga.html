@@ -10,7 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="Logo.png">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         /* .dropdown-container {
@@ -22,11 +23,11 @@
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
         </a>
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -54,13 +55,13 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody style="text-align: center">
+                    <tbody id="flag" style="text-align: center">
                         <tr>
                             <td style="vertical-align: middle;">eMM01425</td>
                             <td id="jenis" style="vertical-align: middle;"></td>
                             <td id="bunga" style="vertical-align: middle;"></td>
                             <td style="vertical-align: middle;">
-                                <a href="tawar-suku-bunga-detail.html"><button style="background-color: green; color: white;" class="btn bi-check-lg"></button></a>
+                                <a href="tawar-suku-bunga-detail.html"><button style="background-color: limegreen; color: white;" class="btn bi-check-lg"></button></a>
                                 <a href="tawar-suku-bunga.html" onclick="return del()"><button style="background-color: red; color: white;" class="btn bi-x-lg"></button></a>
                             </td>
                         </tr>
@@ -81,35 +82,10 @@
         if(localStorage.getItem("flag") == 1){
             document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+        }else{
+            document.getElementById("flag").style.display = "none";
         }
     }
-
-
-    function del() {
-    if (typeof(Storage) !== "undefined") {
-        localStorage.removeItem("date");
-        localStorage.removeItem("time");
-        localStorage.removeItem("valas");
-        localStorage.removeItem("jmltarik");
-        localStorage.removeItem("tgltarik");
-        localStorage.removeItem("tgljatem");
-        localStorage.removeItem("jenis");
-        localStorage.removeItem("namarm");
-        localStorage.removeItem("bunga");
-        localStorage.removeItem("flag");
-    }else{
-        // Sorry! No Web Storage support..
-    }
-    }
-
-    // function logout() {
-    // if (typeof(Storage) !== "undefined") {
-    //     localStorage.clear();
-    // }else{
-    //     // Sorry! No Web Storage support..
-    // }
-    // }
-
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;

@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>KlikBCA Bisnis</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <link rel="shortcut icon" href="Logo.png">
-        <link rel="stylesheet" href="css/styles.css">
-        <style type="text/css">
-            /* .dropdown-container {
-                display: none;
-                padding-left: 8px;
-            } */
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KlikBCA Bisnis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* .dropdown-container {
+            display: none;
+            padding-left: 8px;
+        } */
+    </style>
+</head>
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
         </a>
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -101,7 +101,7 @@
 
                 <br><br><br>
                 <div style="text-align: right;">
-                <a href="tarik-pbmm-acc.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
+                <a href="tarik-pbmm-acc.html" onclick="return acc()"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Simpan</button></a>
                 <a href="tawar-suku-bunga.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
                 </div>
             </form>
@@ -118,16 +118,6 @@
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
         document.getElementById("bunga").innerHTML = localStorage.getItem("bunga") + " p.a.";
     }
-
-    
-    // function logout() {
-    // if (typeof(Storage) !== "undefined") {
-    //     localStorage.clear();
-    // }else{
-    //     // Sorry! No Web Storage support..
-    // }
-    // }
-
     
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;

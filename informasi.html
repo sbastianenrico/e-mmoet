@@ -10,7 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="Logo.png">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         /* .dropdown-container {
@@ -22,11 +23,11 @@
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
         </a> 
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -61,7 +62,7 @@
                             <td id="totalfas" style="vertical-align: middle;">5,000,000,000,000</td>
                             <td id="jumlahtarik" style="vertical-align: middle;"></td>
                             <td id="availfas" style="vertical-align: middle;"></td>
-                            <td id="tgljatem" style="vertical-align: middle;"></td>
+                            <td style="vertical-align: middle;">2023-12-31</td>
                         </tr>
                     </tbody>
                 </table>
@@ -80,17 +81,17 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody style="text-align: center">
+                    <tbody id="flag" style="text-align: center">
                         <tr>
-                            <td style="vertical-align: middle;">001</td>
+                            <td id="nomor" style="vertical-align: middle;"></td>
                             <td id="tgltarik" style="vertical-align: middle;"></td>
                             <td id="valas" style="vertical-align: middle;"></td>
                             <td id="jmltarik" style="vertical-align: middle;"></td>
                             <td id="bunga" style="vertical-align: middle;"></td>
-                            <td id="tgljatemp" style="vertical-align: middle;"></td>
+                            <td id="tgljatem" style="vertical-align: middle;"></td>
                             <td style="vertical-align: middle;">
-                                <a href="lunas-pbmm.html"><button style="background-color: gold; color: white;" class="btn bi-arrow-right"></button></a>
-                                <a href="ppj-pbmm.html"><button style="background-color:green; color: white;" class="btn bi-arrow-counterclockwise"></button></a>
+                                <a href="ppj-pbmm.html"><button style="background-color: orange; color: white;" class="btn bi-arrow-right"></button></a>
+                                <a href="lunas-pbmm.html"><button style="background-color: limegreen; color: white;" class="btn bi-arrow-counterclockwise"></button></a>
                             </td>
                         </tr>
                     </tbody>
@@ -107,31 +108,23 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        if(localStorage.getItem("flag") == 1 || localStorage.getItem("flag") == 2){
+        //rincian fasilitas
+        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+        var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
+        var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
+        document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+
+        if(localStorage.getItem("flag") == 2){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
             document.getElementById("valas").innerHTML = localStorage.getItem("valas");
             document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
             document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-            document.getElementById("tgljatemp").innerHTML = localStorage.getItem("tgljatem");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-
-            //rincian fasilitas
-            document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
-            var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
-            var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
-            document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        }else{
+            document.getElementById("flag").style.display = "none";
         }
     }
-
-
-    // function logout() {
-    // if (typeof(Storage) !== "undefined") {
-    //     localStorage.clear();
-    // }else{
-    //     // Sorry! No Web Storage support..
-    // }
-    // }
-
 
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;
