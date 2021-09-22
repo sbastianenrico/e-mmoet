@@ -50,31 +50,34 @@ function tarik() {
             localStorage.setItem("flag", 1);
             localStorage.setItem("nomor", "001");
             localStorage.setItem("flagtarik", "1");
+            break;
         }
-        else if (localStorage.getItem("flagtarik")=='1'){
-            localStorage.setItem("date1", date);
-            localStorage.setItem("time1", time);
-            localStorage.setItem("valas1", valuta);
-            localStorage.setItem("jmltarik1", jumlahtarik);
-            localStorage.setItem("tgltarik1", tanggaltarik);
-            localStorage.setItem("tgljatem1", tanggaljatem);
-            localStorage.setItem("jenis1", "Penarikan Baru");
-            localStorage.setItem("flag1", 1);
-            localStorage.setItem("nomor1", "002");
-            localStorage.setItem("flagtarik", "2");
-        }
-        else if (localStorage.getItem("flagtarik")=='2'){
-            localStorage.setItem("date2", date);
-            localStorage.setItem("time2", time);
-            localStorage.setItem("valas2", valuta);
-            localStorage.setItem("jmltarik2", jumlahtarik);
-            localStorage.setItem("tgltarik2", tanggaltarik);
-            localStorage.setItem("tgljatem2", tanggaljatem);
-            localStorage.setItem("jenis2", "Penarikan Baru");
-            localStorage.setItem("flag2", 1);
-            localStorage.setItem("nomor2", "003");
-            localStorage.setItem("flagtarik", "3");
-        }
+        // else if (localStorage.getItem("flagtarik")=='1'){
+        //     localStorage.setItem("date1", date);
+        //     localStorage.setItem("time1", time);
+        //     localStorage.setItem("valas1", valuta);
+        //     localStorage.setItem("jmltarik1", jumlahtarik);
+        //     localStorage.setItem("tgltarik1", tanggaltarik);
+        //     localStorage.setItem("tgljatem1", tanggaljatem);
+        //     localStorage.setItem("jenis1", "Penarikan Baru");
+        //     localStorage.setItem("flag1", 1);
+        //     localStorage.setItem("nomor1", "002");
+        //     localStorage.setItem("flagtarik", "2");
+        //     break;
+        // }
+        // else if (localStorage.getItem("flagtarik")=='2'){
+        //     localStorage.setItem("date2", date);
+        //     localStorage.setItem("time2", time);
+        //     localStorage.setItem("valas2", valuta);
+        //     localStorage.setItem("jmltarik2", jumlahtarik);
+        //     localStorage.setItem("tgltarik2", tanggaltarik);
+        //     localStorage.setItem("tgljatem2", tanggaljatem);
+        //     localStorage.setItem("jenis2", "Penarikan Baru");
+        //     localStorage.setItem("flag2", 1);
+        //     localStorage.setItem("nomor2", "003");
+        //     localStorage.setItem("flagtarik", "3");
+        //     break;
+        // }
     // }else{
         // Sorry! No Web Storage support..
     // }
