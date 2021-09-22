@@ -104,7 +104,7 @@
                     <tr>
                         <td style="vertical-align: middle;">Respon KeyBCA Appli 2</td>
                         <td style="vertical-align: middle;">:</td>
-                        <td style="vertical-align: middle;"><input type="password" class="form-control"></td>
+                        <td style="vertical-align: middle;"><input type="password" class="form-control" id="password"></td>
                     </tr>
                 </table>
 
@@ -141,8 +141,8 @@
 
     function autofill(){
         document.getElementById("jmltarik").value = "1,000,000";
-        document.getElementById("tgltarik").value = "22092021";
-        document.getElementById("tgljatem").value = "24092021";
+        document.getElementById("tgltarik").value = new Date("22/09/2021");
+        document.getElementById("tgljatem").value = new Date("24/09/2021");
         document.getElementById("password").value = "123456";
     }
 
