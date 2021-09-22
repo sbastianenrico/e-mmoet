@@ -115,3 +115,48 @@ function input() {
         localStorage.setItem("bunga", bunga);
     }
 }
+
+// perpanjangan pbmm
+function ppj(){
+    if (typeof(Storage) !== "undefined") {
+        var now = new Date();
+        var date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate();
+        var time = now.getHours()+'.'+now.getMinutes();
+        var tanggaljatemp = tgljatemp.value;
+
+        localStorage.setItem("datep", date);
+        localStorage.setItem("timep", time);
+        localStorage.setItem("tgljatemp", tanggaljatemp);
+        localStorage.setItem("jenisp", "Perpanjangan");
+        localStorage.setItem("flag", 3);
+    }else{
+        // Sorry! No Web Storage support..
+    }
+}
+
+// pelunasan
+function lunas(){
+    if (typeof(Storage) !== "undefined") {
+        var now = new Date();
+        var date = now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate();
+        var time = now.getHours()+'.'+now.getMinutes();
+
+        localStorage.setItem("datel", date);
+        localStorage.setItem("timel", time);
+        localStorage.setItem("jenisl", "Pelunasan");
+        localStorage.setItem("flag", 4);
+    }else{
+        // Sorry! No Web Storage support..
+    }
+}
+
+// histori
+function lihatdetail(){
+    var bulan = document.getElementById("bulan").value;
+    var tahun = document.getElementById("tahun").value;
+    if (bulan == "September" && tahun == "2021"){
+        window.location.assign("histori-detail.html");
+    } else {
+        document.getElementById("alert").innerHTML = "No Data Available!";
+    }
+}

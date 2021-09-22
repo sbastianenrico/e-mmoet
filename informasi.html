@@ -109,10 +109,15 @@
 <script>
     if (typeof(Storage) !== "undefined") {
         //rincian fasilitas
-        document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
-        var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
-        var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
-        document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        if(localStorage.getItem("flag") == 4){
+            document.getElementById("jumlahtarik").innerHTML = 0;
+            document.getElementById("availfas").innerHTML = document.getElementById("totalfas").innerHTML;
+        }else{
+            document.getElementById("jumlahtarik").innerHTML = localStorage.getItem("jmltarik");
+            var jumlahfas = parseInt(document.getElementById("totalfas").innerHTML.replace(/,/g,""));
+            var sisafas = parseInt(jumlahfas - localStorage.getItem("jmltarik").replace(/,/g,""));
+            document.getElementById("availfas").innerHTML = sisafas.toLocaleString('en-US');
+        }
 
         if(localStorage.getItem("flag") == 2){
             document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
@@ -120,6 +125,13 @@
             document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
             document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
             document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+        }else if(localStorage.getItem("flag") == 3){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatemp");
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
         }else{
             document.getElementById("flag").style.display = "none";

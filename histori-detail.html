@@ -10,7 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="Logo.png">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         /* .dropdown-container {
@@ -22,11 +23,11 @@
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
-        </a> 
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+        </a>
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -57,13 +58,31 @@
                     </thead>
                     <tbody style="text-align: center">
                         <tr>
-                            <td style="vertical-align: middle;">001</td>
-                            <td style="vertical-align: middle;" id="tgltrans"></td>
-                            <td style="vertical-align: middle;" id="jenis"></td>
-                            <td style="vertical-align: middle;" id="valas"></td>
-                            <td style="vertical-align: middle;" id="jmltarik"></td>
-                            <td style="vertical-align: middle;" id="bunga"></td>
-                            <td style="vertical-align: middle;" id="tgljatem"></td>
+                            <td id="nomor" style="vertical-align: middle;"></td>
+                            <td id="tgltarik" style="vertical-align: middle;"></td>
+                            <td id="jenis" style="vertical-align: middle;"></td>
+                            <td id="valas" style="vertical-align: middle;"></td>
+                            <td id="jmltarik" style="vertical-align: middle;"></td>
+                            <td id="bunga" style="vertical-align: middle;"></td>
+                            <td id="tgljatem" style="vertical-align: middle;"></td>
+                        </tr>
+                        <tr>
+                            <td id="nomor1" style="vertical-align: middle;"></td>
+                            <td id="tgltarik1" style="vertical-align: middle;"></td>
+                            <td id="jenis1" style="vertical-align: middle;"></td>
+                            <td id="valas1" style="vertical-align: middle;"></td>
+                            <td id="jmltarik1" style="vertical-align: middle;"></td>
+                            <td id="bunga1" style="vertical-align: middle;"></td>
+                            <td id="tgljatem1" style="vertical-align: middle;"></td>
+                        </tr>
+                        <tr>
+                            <td id="nomor2" style="vertical-align: middle;"></td>
+                            <td id="tgltarik2" style="vertical-align: middle;"></td>
+                            <td id="jenis2" style="vertical-align: middle;"></td>
+                            <td id="valas2" style="vertical-align: middle;"></td>
+                            <td id="jmltarik2" style="vertical-align: middle;"></td>
+                            <td id="bunga2" style="vertical-align: middle;"></td>
+                            <td id="tgljatem2" style="vertical-align: middle;"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -71,7 +90,9 @@
                 <br><br><br>
                 <div style="text-align: right;">
                 <a href="histori.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
-                </div>
+            
+                <p><p id="flag"></p></p>
+            </div>
             </div>
         </div>
     </div>
@@ -79,29 +100,84 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
-        document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
-        document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
-        document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
-        if (localStorage.getItem("jenis") == "Penarikan Baru"){
-            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgltarik");
+        document.getElementById("flag").innerHTML = localStorage.getItem("flag");
+
+        if(localStorage.getItem("flag") == 2){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
         }
-        else if (localStorage.getItem("jenis") == "Perpanjangan Pinjaman"){
-            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tglpanjang");
+        else if(localStorage.getItem("flag") == 3){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
+
+            document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas1").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatemp");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis1").innerHTML = localStorage.getItem("jenisp");
         }
-        else if (localStorage.getItem("jenis") == "Pelunasan"){
-            document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgllunas");
+        else if(localStorage.getItem("flag") == 4){
+            document.getElementById("nomor").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
+            document.getElementById("bunga").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis").innerHTML = localStorage.getItem("jenis");
+
+            document.getElementById("nomor1").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas1").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik1").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik1").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem1").innerHTML = localStorage.getItem("tgljatemp");
+            document.getElementById("bunga1").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis1").innerHTML = localStorage.getItem("jenisp");
+
+            document.getElementById("nomor2").innerHTML = localStorage.getItem("nomor");
+            document.getElementById("valas2").innerHTML = localStorage.getItem("valas");
+            document.getElementById("jmltarik2").innerHTML = localStorage.getItem("jmltarik");
+            document.getElementById("tgltarik2").innerHTML = localStorage.getItem("tgltarik");
+            document.getElementById("tgljatem2").innerHTML = localStorage.getItem("tgljatemp");
+            document.getElementById("bunga2").innerHTML = localStorage.getItem("bunga");
+            document.getElementById("jenis2").innerHTML = localStorage.getItem("jenisl");
         }
+
+        // if (localStorage.getItem("jenis") == "Penarikan Baru"){
+        //     document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgltarik");
+        // }
+        // else if (localStorage.getItem("jenis") == "Perpanjangan Pinjaman"){
+        //     document.getElementById("tgltrans").innerHTML = localStorage.getItem("tglpanjang");
+        // }
+        // else if (localStorage.getItem("jenis") == "Pelunasan"){
+        //     document.getElementById("tgltrans").innerHTML = localStorage.getItem("tgllunas");
+        // }
     }
 
+    // var dropdown = document.getElementsByClassName("dropdown-btn");
+    // var i;
 
-    function logout() {
-        if (typeof(Storage) !== "undefined") {
-            localStorage.clear();
-        }else{
-            // Sorry! No Web Storage support..
-        }
-    }
+    // for (i = 0; i < dropdown.length; i++) {
+    //     dropdown[i].addEventListener("click", function() {
+    //     this.classList.toggle("active");
+    //     var dropdownContent = this.nextElementSibling;
+    //     if (dropdownContent.style.display === "block") {
+    //     dropdownContent.style.display = "none";
+    //     } else {
+    //     dropdownContent.style.display = "block";
+    //     }
+    //     });
+    // }
 </script>
 </html>

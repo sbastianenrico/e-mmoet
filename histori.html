@@ -10,17 +10,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="Logo.png">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+        /* .dropdown-container {
+            display: none;
+            padding-left: 8px;
+        } */
+    </style>
 </head>
 <body style="height: 100%;">
     <nav class="navbar navbar-default" style="background-color: #000080;">
         <a class="navbar-brand" href="#" style="color: gold;">
-            <img src="KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
+            <img src="img/KlikBCA.png" style="width: 90px; height: 50px; margin-top: -22px; margin-bottom: -20px"> <b>B I S N I S</b>
         </a>
     </nav>
     <nav class="navbar navbar-default" style="background-color: #005FB1;">
-        <a class="navbar-brand" href="index.html" onclick="return logout()" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
+        <a class="navbar-brand" href="index.html" style="color: white;">&nbsp;<i class="bi bi-power"></i> LOGOUT</a>
     </nav>
 
     <div class="container-fluid" style="height: 100%;">
@@ -75,7 +82,7 @@
                                 <option>Juni</option>
                                 <option>Juli</option>
                                 <option>Agustus</option>
-                                <option>September</option>
+                                <option selected>September</option>
                                 <option>Oktober</option>
                                 <option>November</option>
                                 <option>Desember</option>
@@ -86,7 +93,7 @@
 
                 <br>
                 <div style="text-align: right;">
-                    <h1 style="color:red" id="alert"></h1>
+                    <h3 style="color:red" id="alert"></h3>
                     <br>
                     <button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button" onclick="lihatdetail()">Lihat Detail</button>
                     <a href="welcome.html"><button style="width:150px; border-radius: 50px; background-color:#005FB1; color:white;" class="btn" type="button">Kembali</button></a>
@@ -99,31 +106,10 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
-        document.getElementById("date").innerHTML = localStorage.getItem("date");
-        document.getElementById("time").innerHTML = localStorage.getItem("time");
-        document.getElementById("valas").innerHTML = localStorage.getItem("valas");
-        document.getElementById("jmltarik").innerHTML = localStorage.getItem("jmltarik");
+        // document.getElementById("loggedInUser").innerHTML = localStorage.getItem("user");
+        // document.getElementById("loggedInPass").innerHTML = localStorage.getItem("pass");
     }
 
-    // function logout() {
-    //     if (typeof(Storage) !== "undefined") {
-    //         localStorage.clear();
-    //     }else{
-    //         // Sorry! No Web Storage support..
-    //     }
-    // }
-
-    function lihatdetail(){
-        var bulan = document.getElementById("bulan").value;
-        var tahun = document.getElementById("tahun").value;
-        if (bulan == "September" && tahun == "2021"){
-            window.location.assign("histori-detail.html");
-        } else {
-            document.getElementById("alert").innerHTML = "No Data Available !";
-        }
-    }
-
-    
     // var dropdown = document.getElementsByClassName("dropdown-btn");
     // var i;
 
