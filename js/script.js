@@ -162,7 +162,7 @@ function lunas(){
 function lihatdetail(){
     var bulan = document.getElementById("bulan").value;
     var tahun = document.getElementById("tahun").value;
-    if (bulan == "September" && tahun == "2021"){
+    if (bulan == "November" && tahun == "2021"){
         window.location.assign("histori-detail.html");
     } else {
         document.getElementById("alert").innerHTML = "No Data Available!";
