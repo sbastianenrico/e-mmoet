@@ -44,9 +44,9 @@
 
             <div class="col-md-9" style="margin-left: 60px; margin-top: 25px;">
                 <form>
-                <h2><i>PBMM Online Transaction - Penarikan PBMM</i></h2>
+                <h2 id="flagacc"><i></i></h2>
                 <br>
-                <h4 style="color: red; text-align: center;">PENARIKAN PBMM BERHASIL, DANA AKAN DIKREDITKAN KE REKENING TUJUAN PADA TANGGAL PENARIKAN</h4>
+                <h4 id="flagnotif" style="color: red; text-align: center;"></h4>
                 <br><br>
                 <div style="border: 2px solid black;">
                 <table class="table table-borderless" style="font-size: 20px;">
@@ -116,6 +116,8 @@
 
 <script>
     if (typeof(Storage) !== "undefined") {
+        document.getElementById("flagacc").innerHTML = "PBMM Online Transaction - Penarikan PBMM";
+        document.getElementById("flagnotif").innerHTML = "PENARIKAN PBMM BERHASIL, DANA AKAN DIKREDITKAN KE REKENING TUJUAN PADA TANGGAL PENARIKAN";
         document.getElementById("date").innerHTML = localStorage.getItem("date");
         document.getElementById("time").innerHTML = localStorage.getItem("time");
         document.getElementById("valas").innerHTML = localStorage.getItem("valas");
@@ -124,16 +126,20 @@
         document.getElementById("tgljatem").innerHTML = localStorage.getItem("tgljatem");
 
         if(localStorage.getItem("flag") == 2){
+            document.getElementById("flagacc").innerHTML = "PBMM Online Transaction - Penarikan PBMM";
+            document.getElementById("flagnotif").innerHTML = "PENARIKAN PBMM BERHASIL, DANA AKAN DIKREDITKAN KE REKENING TUJUAN PADA TANGGAL PENARIKAN";
             document.getElementById("bunga").innerHTML = localStorage.getItem("bunga") + " p.a.";
-            var sukubunga = parseFloat(localStorage.getItem("bunga"))
+            var sukubunga = parseFloat(localStorage.getItem("bunga"));
             var jumlahbunga = parseFloat(localStorage.getItem("jmltarik").replace(/,/g,"") * (sukubunga / 100));
             var jumlahhari = new Date(localStorage.getItem("tgljatem")).getDate() - new Date(localStorage.getItem("tgltarik")).getDate();
             var totalbunga = jumlahbunga * jumlahhari / 360;
             document.getElementById("jmlbunga").innerHTML = totalbunga.toLocaleString('en-US');
         }
         else if (localStorage.getItem("flag") == 3){
+            document.getElementById("flagacc").innerHTML = "PBMM Online Transaction - Perpanjangan PBMM";
+            document.getElementById("flagnotif").innerHTML = "PERPANJANGAN PBMM BERHASIL, DANA AKAN DIKREDITKAN KE REKENING TUJUAN PADA TANGGAL PENARIKAN";
             document.getElementById("bunga").innerHTML = localStorage.getItem("bungap") + " p.a.";
-            var sukubunga = parseFloat(localStorage.getItem("bungap"))
+            var sukubunga = parseFloat(localStorage.getItem("bungap"));
             var jumlahbunga = parseFloat(localStorage.getItem("jmltarik").replace(/,/g,"") * (sukubunga / 100));
             var jumlahhari = new Date(localStorage.getItem("tgljatem")).getDate() - new Date(localStorage.getItem("tgltarik")).getDate();
             var totalbunga = jumlahbunga * jumlahhari / 360;
